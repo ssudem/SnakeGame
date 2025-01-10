@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimal-ui"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Snake Game</title>
+  </head>
+  <body>
+    <div id="interface">
+      <div id="Board">
+        <!-- <div> Bodys </div> -->
+      </div>
+      <div id="Display">
+        <div class="direction">Press Arrow Keys</div>
+        <div class="gameover">GAME OVER</div>
+        <div id="score"></div>
+        <div class="reset">Reset</div>
+        <div id="Button">
+          <i id="up" class="fa-solid fa-arrow-up click-animation"></i>
+          <i id="down" class="fa-solid fa-arrow-up click-animation"></i>
+          <i id="left" class="fa-solid fa-arrow-up click-animation"></i>
+          <i id="right" class="fa-solid fa-arrow-up click-animation"></i>
+          <div class="direc"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const deviceType = /Mobi|Android/i.test(navigator.userAgent)
+        ? "phone_SN"
+        : "Desktop_SN";
+      const script = document.createElement("script");
+      script.src = `${deviceType}.js`;
+      document.body.appendChild(script);
+
+      console.log(deviceType);
+    </script>
+    <!-- <script src="./script1.js"></script> -->
+  </body>
+</html>

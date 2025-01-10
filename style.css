@@ -1,0 +1,202 @@
+/* Dark Theme CSS for Snake Game */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#interface {
+  background-color: #1a1a1a; /* Dark background for the interface */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #f0f0f0; /* Light text color */
+}
+
+#Board {
+  height: 80vh;
+  width: 80vh;
+  background-color: #333333; /* Dark board background */
+  border: 7px solid #ff0000; /* Glowing green border */
+  display: grid;
+  grid-template-rows: repeat(30, 1fr);
+  grid-template-columns: repeat(30, 1fr);
+
+  /* shadow :- */
+  box-shadow: 0px 0px 100px 0px #f86c6c;
+}
+
+#Board > div {
+  transition: transform 1s linear;
+  border-radius: 50%;
+  border: 2px solid #ff00ff; /* Darker border for cells */
+}
+
+#score {
+  font-size: xx-large;
+  font-weight: bolder;
+  color: #00ff00; /* Neon green for score */
+}
+
+#Display {
+  background-color: #222222; /* Dark background for display */
+  border: 4px solid #555555; /* Subtle border */
+  border-radius: 20%;
+  height: 40vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  /* shadow :- */
+  box-shadow: 0px 0px 50px 0px #675c5c;
+}
+
+.gameover {
+  font-weight: 1000;
+  color: #ff0000; /* Bright red for Game Over text */
+  font-size: xx-large;
+}
+
+.reset {
+  background-color: #444444;
+  padding: 6px;
+  color: #ffffff;
+  font-size: xx-large;
+  border-radius: 17%;
+  border: 2px solid #00ff00; /* Green border for reset button */
+}
+
+.reset:hover {
+  cursor: pointer;
+  background-color: #00ff00;
+  color: #000000;
+}
+
+.direction {
+  font-size: xx-large;
+  font-weight: bold;
+  color: #00bfff; /* Bright cyan for direction */
+}
+
+#Button {
+  display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  body {
+    background-color: #1a1a1a;
+  }
+
+  #interface {
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  #Board {
+    width: 90vw;
+    background-color: #333333;
+    border: none;
+    outline: 7px solid #ff0000; /* Green glowing outline */
+  }
+
+  #Board > div {
+    border: 1px solid #ff00ff; /* Darker border for cells */
+  }
+
+  #Display {
+    flex-direction: row;
+    border: none;
+    border-radius: none;
+    border: 1px solid red;
+    height: 28vh;
+    width: 100vw;
+
+    box-shadow: none;
+  }
+  #score {
+    font-size: 7vw;
+    /* font-weight: bolder;
+    color: #00ff00; Neon green for score */
+  }
+
+  #Button {
+    height: 45vw;
+    width: 45vw;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  #Button > i {
+    font-size: 15vw;
+    color: #ff00ff; /* Bright magenta for buttons */
+    background-color: #444444;
+    display: inline-block;
+    text-align: center;
+    border-radius: 10%;
+    outline: 2px solid #ff00ff;
+  }
+
+  .direc {
+    grid-area: 2/2;
+    font-size: 13vw;
+    display: inline-block;
+    text-align: center;
+  }
+
+  #up {
+    transition: transform 0.1s ease;
+    grid-area: 1/2;
+  }
+  #down {
+    grid-area: 3/2;
+    transform: rotate(180deg);
+    transition: transform 0.1s ease;
+  }
+  #left {
+    grid-area: 2/1;
+    transform: rotate(-90deg);
+    transition: transform 0.1s ease;
+  }
+  #right {
+    grid-area: 2/3;
+    transform: rotate(90deg);
+    transition: transform 0.1s ease;
+  }
+  #reset {
+    background-color: #787878;
+  }
+  #up:active {
+    transform: rotate(0deg) scale(0.9);
+  }
+  #down:active {
+    transform: rotate(180deg) scale(0.9);
+  }
+  #left:active {
+    transform: rotate(-90deg) scale(0.9);
+  }
+  #right:active {
+    transform: rotate(90deg) scale(0.9);
+  }
+}
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.3); /* Scale up */
+  }
+  100% {
+    transform: scale(1); /* Scale down */
+  }
+}
