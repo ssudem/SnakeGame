@@ -230,7 +230,7 @@ async function startGame() {
 
 // run :-
 function run() {
-  // ResetAudio.play();
+  ResetAudio.play();
   SetUp();
   intervalID = setInterval(startGame, 200);
 }
