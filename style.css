@@ -33,6 +33,7 @@
   transition: transform 1s linear;
   border-radius: 50%;
   border: 2px solid #ff00ff; /* Darker border for cells */
+  box-shadow: 0px 0px 50px 0px #ffffff;
 }
 
 #score {
